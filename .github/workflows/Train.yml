@@ -15,5 +15,5 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build and Push Docker Image
         run: |
-          docker build -t your_username/your_project_name:latest .
-          docker push your_username/your_project_name:latest
+          docker build -t kapavan16/CICD_Assignment:latest .
+          docker push kapavan16/CICD_Assignment:latest
