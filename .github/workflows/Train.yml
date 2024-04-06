@@ -35,7 +35,8 @@ jobs:
         run: docker pull kapavan/cicd-kapavan:latest
       - name: Check Score
         run: |
-          score=$(docker run kapavan/cicd-kapavan:latest)
+          docker run kapavan/cicd-kapavan:latest
+          score=$(docker logs -f  kapavan/cicd-kapavan:latest)
           echo "score:"
           echo "$score"
           if [[ $(echo "$score > 0.35" | bc) -eq 1 ]]; then
