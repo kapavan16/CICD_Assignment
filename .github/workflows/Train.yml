@@ -33,13 +33,11 @@ jobs:
 
       - name: Pull Docker Image
         run: docker pull kapavan/cicd-kapavan:latest
-
-      - name: Run Docker Container
-        run: docker run kapavan/cicd-kapavan:latest
-
       - name: Check Score
         run: |
           score=$(docker run kapavan/cicd-kapavan:latest)
+          echo "score:"
+          echo "$score"
           if [[ $(echo "$score > 0.35" | bc) -eq 1 ]]; then
             echo "Score is greater than 0.50"
           else
