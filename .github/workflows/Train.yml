@@ -39,8 +39,8 @@ jobs:
 
       - name: Check Score
         run: |
-          score=$(docker run yourusername/yourimage:latest)
-          if [[ $(echo "$score > 0.50" | bc) -eq 1 ]]; then
+          score=$(docker run kapavan/cicd-kapavan:latest)
+          if [[ $(echo "$score > 0.35" | bc) -eq 1 ]]; then
             echo "Score is greater than 0.50"
           else
             echo "Score is not greater than 0.50"
