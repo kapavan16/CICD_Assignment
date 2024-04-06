@@ -33,9 +33,12 @@ jobs:
 
       - name: Pull Docker Image
         run: docker pull kapavan/cicd-kapavan:latest
+
+      - name: Run Docker Image
+        run: docker run kapavan/cicd-kapavan:latest
+        
       - name: Check Score
         run: |
-          docker run kapavan/cicd-kapavan:latest
           score=$(docker logs -f  kapavan/cicd-kapavan:latest)
           echo "score:"
           echo "$score"
