@@ -7,6 +7,7 @@ on:
 
 jobs:
   pull-and-run:
+    needs: [Train]
     runs-on: ubuntu-latest
 
     steps:
