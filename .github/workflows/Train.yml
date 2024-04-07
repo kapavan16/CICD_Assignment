@@ -42,6 +42,7 @@ jobs:
           score=$(docker logs -f  mycontainer)
           echo "score:"
           echo "$score"
+          echo "score end:"
           if [[ $(echo "$score > 0.35" | bc) -eq 1 ]]; then
             echo "Score is greater than 0.50"
           else
