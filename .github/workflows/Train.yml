@@ -34,12 +34,9 @@ jobs:
       - name: Pull Docker Image
         run: docker pull kapavan/cicd-kapavan:latest
 
-      - name: Run Docker
-        run: docker run --name mycontainer kapavan/cicd-kapavan:latest
-
       - name: Check Score
         run: |
-          score=$(docker run --name mycontainer kapavan/cicd-kapavan:latest)
+          score=$(docker run -d -v --name mycontainer kapavan/cicd-kapavan:latest)
           echo "score:"
           echo "$score"
           echo "score end:"
