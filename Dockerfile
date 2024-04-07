@@ -9,4 +9,4 @@ COPY . .
 
 CMD ["python", "-u", "test.py"]
 
-ENTRYPOINT ["python", "train.py"]
+RUN ["python", "train.py"]
