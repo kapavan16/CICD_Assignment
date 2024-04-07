@@ -7,6 +7,6 @@ RUN pip install -r requirements.txt
 
 COPY . .  
 
-CMD ["python", "train.py"]
+ENTRYPOINT ["python", "train.py"]
 
-ENTRYPOINT ["python", "test.py"]
+RUN ["python","-u", "test.py"]
