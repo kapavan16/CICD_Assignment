@@ -36,7 +36,7 @@ jobs:
 
       - name: Check Score
         run: |
-          score=$(docker run -d -v kapavan/cicd-kapavan:latest)
+          score=$(docker run -d kapavan/cicd-kapavan:latest)
           echo "score:"
           echo "$score"
           echo "score end:"
