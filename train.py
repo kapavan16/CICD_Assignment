@@ -1,6 +1,8 @@
 import pandas as pd
+from sklearn.linear_model import LogisticRegression
 import pickle
 import numpy as np
+import scikit
 
 df = pd.read_csv("data/train.csv")
 X = df.drop(columns=['Disease']).to_numpy()
