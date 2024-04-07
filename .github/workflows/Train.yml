@@ -43,10 +43,5 @@ jobs:
           echo "score:"
           echo "$score"
           echo "score end:"
-          if [[ $(echo "$score > 0.35" | bc) -eq 1 ]]; then
-            echo "Score is greater than 0.50"
-          else
-            echo "Score is not greater than 0.50"
-            exit 1
-          fi
+          if [[ `echo "$OUTPUT 0.35" | awk '{print ($1 < $2)}'` == 1 ]]; then echo "Insufficient Accuracy" && exit 1; fi
     
