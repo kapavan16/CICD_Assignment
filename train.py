@@ -1,7 +1,6 @@
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
-from sklearn.neighbors import KNeighborsClassifier
-import xgboost as xgb
+from sklearn.svm import SVC
 import pickle
 import numpy as np
 
@@ -12,8 +11,7 @@ labels = np.sort(np.unique(y))
 y = np.array([np.where(labels == x) for x in y]).flatten()
 
 # model = LogisticRegression().fit(X, y)
-# model = KNeighborsClassifier(n_neighbors=5).fit(X,y)
-model = xgb.XGBClassifier().fit(X,y)
+model = SVC(kernel='rbf').fit(X,y)
 
 with open("model.pkl", 'wb') as f:
     pickle.dump(model, f)
